@@ -483,6 +483,21 @@ searchByTitle("avengers");
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
 
+const match=[]
+const unmatch=[]
+
+const searchAndDivide = function (stringa) {
+  movies.forEach((movie) => {
+    if (movie.Title.toLocaleLowerCase().includes(stringa.toLowerCase())) {
+      match.push(movie);
+    } else {
+      unmatch.push(movie);
+    }
+  });
+  return { match, unmatch };
+};
+console.log(searchAndDivide("avengers"));
+
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
